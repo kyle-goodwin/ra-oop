@@ -65,16 +65,22 @@ Wow.
 ![Ladder Logic](./images/ladder.png)
 # Dependency Injection
 Objects are cool and all but why bother with all this work making six definitions to instantiate a single cylinder? The answer is to make more objects and put those objects inside objects for other objects. Like this contraption that uses seven cylinders to do a thing.
-![[Pasted image 20240601191203.png]]
+
+![Dependency Injection](./images/dependency_injection.png)
 
 Calling the seven cylinder thing's method.
-![[Pasted image 20240601192132.png]]
+
+![Contraption Call](./images/contraption.png)
 
 Inside the seven cylinder do a thing's method.
-![[Pasted image 20240601192231.png]]
+
+![Contraption Internal](./images/contraption_inside.png)
+
 ## Self Method Injection
 Sure, why not?
-![[Pasted image 20240601194816.png]]
+
+![Self Method Injection](./images/self_injection.png)
+
 # Conclusion
 I don't know what you're supposed to do with this information but if you made it down here it lives in your brain now. Good luck.
 # Disclaimer
