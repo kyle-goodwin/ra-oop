@@ -13,7 +13,7 @@ struct thing_t{
 int thing_dosomething(thing_t *thing_h, int parameter, int another_parameter);
 ```
 
-The method is not a member of the struct so you can't do `thing_h.dosometing(1,2);` like you would in other languages. Instead the object instance is used a parameter of the function and passed as reference to the function like `thing_dosomething(%thing_h,1,2)`. In the end it achieved basically the same thing.
+The method is not a member of the struct so you can't do `thing_h.dosometing(1,2);` like you would in other languages. Instead the object instance is used a parameter of the function and passed as reference to the function like `thing_dosomething(&thing_h,1,2)`. In the end it achieves basically the same thing.
 
 Studio 5000 does not have structs, pointers, or even functions, but it does have UDTs and AOIs which is what we're going to use.
 ## "Classes"
