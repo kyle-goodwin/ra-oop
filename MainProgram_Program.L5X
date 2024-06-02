@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="33.01" TargetName="MainProgram" TargetType="Program" ContainsContext="true" ExportDate="Sat Jun 01 19:55:16 2024" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="ra_oop">
+<DataTypes Use="Context">
+<DataType Name="Cylinder_Class" Family="NoFamily" Class="User">
+<Members>
+<Member Name="methods" DataType="Cylinder_Methods" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="properties" DataType="Cylinder_Properties" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Cylinder_Methods"/>
+<Dependency Type="DataType" Name="Cylinder_Properties"/>
+</Dependencies>
+</DataType>
+<DataType Name="Cylinder_Methods" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Monitor" DataType="Cylinder_Monitor" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ToHome" DataType="Cylinder_ToHome" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ToWork" DataType="Cylinder_ToWork" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Dance" DataType="Cylinder_Dance" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="AddOnInstructionDefinition" Name="Cylinder_Monitor"/>
+<Dependency Type="AddOnInstructionDefinition" Name="Cylinder_ToHome"/>
+<Dependency Type="AddOnInstructionDefinition" Name="Cylinder_ToWork"/>
+<Dependency Type="AddOnInstructionDefinition" Name="Cylinder_Dance"/>
+</Dependencies>
+</DataType>
+<DataType Name="Cylinder_Properties" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZCylinder_P0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="SensorHome" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="SensorWork" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="OutputHome" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="OutputWork" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="FaultHome" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="FaultWork" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="StatusHome" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="StatusWork" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P0" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZCylinder_P9" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="SafeHome" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P9" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="SafeWork" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCylinder_P9" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="zTimerFaultHome" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="zTimerFaultWork" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="SevenCylinderContraption_Class" Family="NoFamily" Class="User">
+<Members>
+<Member Name="methods" DataType="SevenCylinderContraption_Methods" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="properties" DataType="SevenCylinderContraption_Properties" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="SevenCylinderContraption_Methods"/>
+<Dependency Type="DataType" Name="SevenCylinderContraption_Properties"/>
+</Dependencies>
+</DataType>
+<DataType Name="SevenCylinderContraption_Methods" Family="NoFamily" Class="User">
+<Members>
+<Member Name="DoAThing" DataType="SevenCylinderContraption_DoAThing" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="AddOnInstructionDefinition" Name="SevenCylinderContraption_DoAThing"/>
+</Dependencies>
+</DataType>
+<DataType Name="SevenCylinderContraption_Properties" Family="NoFamily" Class="User">
+<Members>
+<Member Name="zInternal" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Name="Cylinder_ToHome" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2024-06-02T00:09:26.196Z" CreatedBy="DESKTOP-9TNHD8P\Kyle" EditedDate="2024-06-02T00:12:19.989Z" EditedBy="DESKTOP-9TNHD8P\Kyle" SoftwareRevision="v33.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="cylinder" TagType="Base" DataType="Cylinder_Properties" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="ST">
+<STContent>
+<Line Number="0">
+<![CDATA[]]>
+</Line>
+</STContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Cylinder_Properties"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Name="Cylinder_ToWork" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2024-06-02T00:09:15.983Z" CreatedBy="DESKTOP-9TNHD8P\Kyle" EditedDate="2024-06-02T00:13:13.942Z" EditedBy="DESKTOP-9TNHD8P\Kyle" SoftwareRevision="v33.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="cylinder" TagType="Base" DataType="Cylinder_Properties" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="ST">
+<STContent>
+<Line Number="0">
+<![CDATA[]]>
+</Line>
+</STContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Cylinder_Properties"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Name="Cylinder_Dance" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2024-06-02T01:44:21.027Z" CreatedBy="DESKTOP-9TNHD8P\Kyle" EditedDate="2024-06-02T02:46:35.153Z" EditedBy="DESKTOP-9TNHD8P\Kyle" SoftwareRevision="v33.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="cylinder" TagType="Base" DataType="Cylinder_Properties" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="toHome" TagType="Base" DataType="Cylinder_ToHome" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="toWork" TagType="Base" DataType="Cylinder_ToWork" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="ST">
+<STContent>
+<Line Number="0">
+<![CDATA[]]>
+</Line>
+<Line Number="1">
+<![CDATA[Cylinder_ToHome(toHome,cylinder);]]>
+</Line>
+<Line Number="2">
+<![CDATA[Cylinder_ToWork(toWork,cylinder);]]>
+</Line>
+<Line Number="3">
+<![CDATA[]]>
+</Line>
+</STContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Cylinder_Properties"/>
+<Dependency Type="AddOnInstructionDefinition" Name="Cylinder_ToHome"/>
+<Dependency Type="AddOnInstructionDefinition" Name="Cylinder_ToWork"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Name="Cylinder_Monitor" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2024-06-02T00:21:08.159Z" CreatedBy="DESKTOP-9TNHD8P\Kyle" EditedDate="2024-06-02T00:24:04.138Z" EditedBy="DESKTOP-9TNHD8P\Kyle" SoftwareRevision="v33.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="cylinder" TagType="Base" DataType="Cylinder_Properties" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="ST">
+<STContent>
+<Line Number="0">
+<![CDATA[]]>
+</Line>
+</STContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Cylinder_Properties"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Name="SevenCylinderContraption_DoAThing" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2024-06-02T00:32:37.096Z" CreatedBy="DESKTOP-9TNHD8P\Kyle" EditedDate="2024-06-02T01:35:13.679Z" EditedBy="DESKTOP-9TNHD8P\Kyle" SoftwareRevision="v33.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="sevenCylinderContraption" TagType="Base" DataType="SevenCylinderContraption_Properties" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderOne" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderTwo" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderThree" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderFour" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderFive" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderSix" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="cylinderSeven" TagType="Base" DataType="Cylinder_Class" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+</Parameters>
+<LocalTags/>
+<Routines>
+<Routine Name="Logic" Type="ST">
+<STContent>
+<Line Number="0">
+<![CDATA[]]>
+</Line>
+<Line Number="1">
+<![CDATA[// This thing has access to the methods and properties of the cylinders through dependancy injection.]]>
+</Line>
+<Line Number="2">
+<![CDATA[Cylinder_ToWork(cylinderOne.methods.ToWork,cylinderOne.properties);]]>
+</Line>
+<Line Number="3">
+<![CDATA[Cylinder_ToWork(cylinderTwo.methods.ToWork,cylinderTwo.properties);]]>
+</Line>
+<Line Number="4">
+<![CDATA[Cylinder_ToWork(cylinderThree.methods.ToWork,cylinderThree.properties);]]>
+</Line>
+<Line Number="5">
+<![CDATA[Cylinder_ToWork(cylinderFour.methods.ToWork,cylinderFour.properties);]]>
+</Line>
+<Line Number="6">
+<![CDATA[Cylinder_ToWork(cylinderFive.methods.ToWork,cylinderFive.properties);]]>
+</Line>
+<Line Number="7">
+<![CDATA[Cylinder_ToWork(cylinderSix.methods.ToWork,cylinderSix.properties);]]>
+</Line>
+<Line Number="8">
+<![CDATA[Cylinder_ToWork(cylinderSeven.methods.ToWork,cylinderSeven.properties);]]>
+</Line>
+<Line Number="9">
+<![CDATA[]]>
+</Line>
+</STContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Cylinder_Class"/>
+<Dependency Type="DataType" Name="SevenCylinderContraption_Properties"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+<Programs Use="Context">
+<Program Use="Target" Name="MainProgram" TestEdits="false" MainRoutineName="MainRoutine" Disabled="false" UseAsFolder="false">
+<Tags>
+<Tag Name="cylinderFive" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="cylinderFour" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="cylinderOne" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="cylinderSeven" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="cylinderSix" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="cylinderThree" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="cylinderTwo" TagType="Base" DataType="Cylinder_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1],[1],[1],[1]],[0,0,[0,0,0],[0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Cylinder_Class">
+<StructureMember Name="methods" DataType="Cylinder_Methods">
+<StructureMember Name="Monitor" DataType="Cylinder_Monitor">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToHome" DataType="Cylinder_ToHome">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="ToWork" DataType="Cylinder_ToWork">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="Dance" DataType="Cylinder_Dance">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="Cylinder_Properties">
+<DataValueMember Name="SensorHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SensorWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StatusWork" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeHome" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SafeWork" DataType="BOOL" Value="0"/>
+<StructureMember Name="zTimerFaultHome" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="zTimerFaultWork" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="sevenCylinderContraption" TagType="Base" DataType="SevenCylinderContraption_Class" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[[1]],[0]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="SevenCylinderContraption_Class">
+<StructureMember Name="methods" DataType="SevenCylinderContraption_Methods">
+<StructureMember Name="DoAThing" DataType="SevenCylinderContraption_DoAThing">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+</StructureMember>
+</StructureMember>
+<StructureMember Name="properties" DataType="SevenCylinderContraption_Properties">
+<DataValueMember Name="zInternal" DataType="DINT" Radix="Decimal" Value="0"/>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="LadderRoutine" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[Cylinder_ToHome(cylinderOne.methods.ToHome,cylinderOne.properties);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="MainRoutine" Type="ST">
+<STContent>
+<Line Number="0">
+<![CDATA[]]>
+</Line>
+<Line Number="1">
+<![CDATA[// Cyclic monitoring of the cylinder.]]>
+</Line>
+<Line Number="2">
+<![CDATA[Cylinder_Monitor(cylinderOne.methods.Monitor,cylinderOne.properties);]]>
+</Line>
+<Line Number="3">
+<![CDATA[]]>
+</Line>
+<Line Number="4">
+<![CDATA[// Momentary action request of the cylinder.]]>
+</Line>
+<Line Number="5">
+<![CDATA[Cylinder_ToHome(cylinderOne.methods.ToHome,cylinderOne.properties);]]>
+</Line>
+<Line Number="6">
+<![CDATA[Cylinder_ToWork(cylinderOne.methods.ToWork,cylinderOne.properties);]]>
+</Line>
+<Line Number="7">
+<![CDATA[]]>
+</Line>
+<Line Number="8">
+<![CDATA[// A thing with seven cylinders.]]>
+</Line>
+<Line Number="9">
+<![CDATA[SevenCylinderContraption_DoAThing(sevenCylinderContraption.methods.DoAThing,sevenCylinderContraption.properties,]]>
+</Line>
+<Line Number="10">
+<![CDATA[	cylinderOne,]]>
+</Line>
+<Line Number="11">
+<![CDATA[	cylinderTwo,]]>
+</Line>
+<Line Number="12">
+<![CDATA[	cylinderThree,]]>
+</Line>
+<Line Number="13">
+<![CDATA[	cylinderFour,]]>
+</Line>
+<Line Number="14">
+<![CDATA[	cylinderFive,]]>
+</Line>
+<Line Number="15">
+<![CDATA[	cylinderSix,]]>
+</Line>
+<Line Number="16">
+<![CDATA[	cylinderSeven]]>
+</Line>
+<Line Number="17">
+<![CDATA[);]]>
+</Line>
+<Line Number="18">
+<![CDATA[]]>
+</Line>
+<Line Number="19">
+<![CDATA[Cylinder_Dance(cylinderOne.methods.Dance,cylinderOne.properties,]]>
+</Line>
+<Line Number="20">
+<![CDATA[	cylinderOne.methods.ToHome,]]>
+</Line>
+<Line Number="21">
+<![CDATA[	cylinderOne.methods.ToWork]]>
+</Line>
+<Line Number="22">
+<![CDATA[);]]>
+</Line>
+<Line Number="23">
+<![CDATA[]]>
+</Line>
+</STContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>
